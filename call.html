@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="icofont/icofont.min.css">
+    <style>
+        .flex {
+            display: flex;
+            flex-wrap: wrap;
+            width: 250px;
+            margin-left: 10px;
+
+            justify-content: center;
+        }
+
+        .cocki {
+            outline: none;
+            width: 100%;
+            font-size: 50px;
+            border: 0;
+            text-align: center;
+            font-family: cursive;
+            margin-top: 120px;
+            height: 60px;
+            color: black;
+            background-color: rgba(0, 0, 0, 0.096);
+        }
+
+        .bat {
+            padding: 15px;
+            width: 77px;
+            height: 77px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.322);
+            margin: 3px;
+            border: 2px solid black;
+            color: black;
+            font-size: 45px;
+        }
+
+        .dd {
+            background-color: black;
+            color: white;
+            padding: 5px;
+            font-size: 15px;
+            width: 80px;
+            height: 40px;
+            border-radius: 0;
+        }
+
+        .bat:hover {
+            background-color: rgba(255, 255, 255, 0.473);
+        }
+
+        .sy {
+            background-color: rgba(255, 255, 255, 0.123);
+        }
+
+        .fake {
+            font-size: 50px;
+            margin-top: 122px;
+            border-radius: 0;
+            
+            padding: 0;
+            width: fit-content;
+            height: fit-content;
+        }
+        .land{
+            display: flex;
+            align-items: center;
+        }
+    </style>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <img id="back" class="img" src="vivo.png" alt="">
+    <div class="cover">
+        <div class="sy">
+            <div class="land">
+                <input class="cocki" id="input" type="text">
+                <button class="fake" onclick="clr('c')"><i class="icofont-delete"></i></button>
+            </div>
+            <div class="flex">
+                <button class="bat" onclick="numbers(1)">1</button>
+                <button class="bat" onclick="numbers(2)">2</button>
+                <button class="bat" onclick="numbers(3)">3</button>
+                <button class="bat" onclick="numbers(4)">4</button>
+                <button class="bat" onclick="numbers(5)">5</button>
+                <button class="bat" onclick="numbers(6)">6</button>
+                <button class="bat" onclick="numbers(7)">7</button>
+                <button class="bat" onclick="numbers(8)">8</button>
+                <button class="bat" onclick="numbers(9)">9</button>
+                <button class="bat" onclick="numbers('#')">#</button>
+                <button class="bat" onclick="numbers(0)">0</button>
+                <button class="bat" onclick="numbers('*')">*</button>
+            </div>
+            <img id="dial" class="srcc" src="dial-removebg-preview.png" alt="">
+            <audio id="audi" src=""></audio>
+        </div>
+    </div>
+</body>
+<script>
+    let input = document.getElementById('input')
+    function numbers(param) {
+        input.value += param
+    }
+    let dial = document.getElementById('dial')
+    let audi = document.getElementById('audi')
+    let play = new Audio('Iphone.mp3')
+    dial.addEventListener('click', function () {
+
+        if (input.value == "") {
+            alert('Fil in digits First Then Call')
+        } else {
+            play.play()
+            alert('Calling...')
+        }
+    })
+    let back = document.getElementById('back')
+    back.addEventListener('drag', function () {
+        window.location.href = "phone.html"
+    })
+    function clr() {
+        var output = document.getElementById('input').value
+        document.getElementById('input').value = output.substr(0, (output.length - 1))
+    }
+</script>
+
+</html>

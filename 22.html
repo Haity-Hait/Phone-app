@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="stop.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .div{
+            position: absolute;
+            top: 65px;
+            width: 270px;
+            border-radius: 20px;
+            left: 530px;
+            background-image: ;
+            height: 600px;
+            background-color: peru;
+        }
+    </style>
+    <link rel="stylesheet" href="../../../bootstrap-5.2.0-dist/css/bootstrap.min.css">
+</head>
+<body class="p-3">
+    <img src="vivo.png" class="img" alt="">
+    <div class="div">
+        <div class=" bg-warning">
+            <h1>STOPWATCH</h1>
+            <h1 id="count">00:00</h1>
+            <button class="btn btn-outline-white" onclick="start()">Start</button>
+            <button class="btn btn-outline-white" onclick="stop()">Stop</button>
+            <button class="btn btn-outline-white" onclick="reset()">Reset</button>
+        </div>
+    </div>
+    
+</body>
+<script>
+    let count = document.getElementById('count')
+let timeout = null
+
+    function start(){
+       let millisec = 0
+       let seconds = 0
+       timeout= setInterval(() => {
+            millisec++
+            count.innerHTML=`${seconds}:${millisec}`
+            if(millisec > 59){
+                millisec = 0
+                seconds++
+            }
+       }, 80);
+    }
+    function stop(){
+        clearInterval(timeout)
+    }
+    function reset(){
+        clearInterval(timeout)
+        count.innerHTML=`00:00`
+    }
+</script>
+</html>

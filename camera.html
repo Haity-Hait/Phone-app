@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="bootstrap-5.2.0-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="icofont/icofont.min.css">
+    <style>
+        button{
+            padding: 10px;
+            border-radius: 5px;
+        }
+        .gog{
+            background-color: rgba(0, 0, 0, 0.534);
+            border-radius: 50%;
+
+        }
+        
+        .icofont-camera{
+            color: rgba(255, 255, 255, 0.671);
+            font-size: 50px;
+        }
+    </style>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <img class="img" src="vivo.png" alt="">
+
+    <div class="absolute">
+        <video id="video" autoplay></video >
+        <div class="abs">
+            <div id="salt">
+                <canvas  onclick="shaft()" id="canvas"></canvas>
+                <button class="gog" onclick="takepic()"><i class="icofont-camera"></i></button>
+                <button class="coco btn btn-primary text-color-white" onclick="phone()">Back</button>
+            </div>
+            <button class="btn btn-primary" onclick="lake()" id="btno">Back</button>
+        </div>
+        <div id="div"></div>
+    </div>
+</body>
+<script>
+    let video = document.getElementById('video')
+    let canvas = document.getElementById('canvas')
+    let div = document.getElementById('div')
+    let imgArr = []
+    async function startcam() {
+        let stream = await navigator.mediaDevices.getUserMedia({ video: true, audio: false })
+        video.srcObject = stream
+    }
+    startcam()
+    function takepic() {
+        div.innerHTML = " "
+        let can = canvas.getContext('2d').drawImage(video, 0, 0, canvas.width, canvas.height)
+        let img_url = canvas.toDataURL('image/jpeg');
+        console.log("Img_url" + img_url);
+        let data = {
+            image: img_url
+        }
+        imgArr.push(data)
+        localStorage.setItem('Image', JSON.stringify(imgArr))
+        imagess()
+    }
+    function imagess() {
+        let time = new Date
+
+        let fault = localStorage.getItem('Image')
+        let conv = JSON.parse(fault)
+        console.log(conv);
+        for (i = 1; i < conv.length; i++) {
+            if (conv != null) {
+                imgArr = conv
+            }
+            let element = conv[i];
+            div.innerHTML += `
+                <div id="checkpix">
+                    <img id="dds" src="${element.image}">
+                    <div class="mx-5">
+                        <span>Time</span> :
+                        <span>${time.toLocaleTimeString()}</span>
+                    </div>
+                </div>
+            `
+        }
+    }
+    function shaft() {
+        div.style.display = "block"
+        document.getElementById('salt').style.display = "none"
+        document.getElementById('btno').style.display = "block"
+
+    }
+    function lake() {
+        div.style.display = "none"
+        document.getElementById('salt').style.display = "block"
+        document.getElementById('btno').style.display = "none"
+    }
+    function gall() {
+        div.style.display = "none"
+        div.style.display = "none"
+        document.getElementById('salt').style.display = "block"
+    }
+    function phone() {
+        window.location.href = "phone.html"
+    }
+    div.addEventListener('click', function(){
+        div.style.backgroundColor="white"
+    })
+    div.addEventListener("click", function(){
+        div.style.backgroundColor="black"
+    })
+</script>
+
+</html>

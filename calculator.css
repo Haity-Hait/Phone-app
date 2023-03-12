@@ -1,0 +1,88 @@
+.dd{
+    border: 2px solid gray;
+    width: 265px;
+    border-radius: 20px;
+    background-image: url(1664519173204.jpg);
+    background-position: center;
+    background-color: rgba(230, 230, 230, 0.356);
+    /* margin: auto; */
+}
+title{
+    color: red;
+    background-color: aqua;
+}
+button{
+    font-size: 30px;
+    padding: 20px;
+}
+input{
+    width: 260px;
+    outline: none;
+    height: 100px;
+    text-align-last: right;
+    text-emphasis-position:right;
+    margin-top: 2px;
+    border-radius: 15px 15px 0 0;
+    font-size: 80px;
+    color: white;
+    font-family: cursive;
+    border: none;
+    background: transparent;
+    text-align: right;
+}
+.flex{
+    display: flex;
+    justify-content: space-between;
+}
+.big{
+    width: 130px;
+}
+.hey{
+    width: 200px;
+    padding: 10px;
+}
+.note{
+    /* width: 80px; */
+    padding: 12px;
+}
+.small{
+    width: 66px;
+}
+.flex1{
+    display: flex;
+    width: 300px;
+}
+
+.flex2{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.plus{
+    width: 80px;
+}
+.equali{
+    width: 107px;
+}
+.icofont-delete{
+    color:  black;
+    font-size: 30px;
+    z-index: 999;
+}
+body{
+    background-image: url(img7.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+button{
+    background-color: rgba(230, 230, 230, 0.247);
+    border: 1px solid gray;
+    color: black;
+    font-weight: 700;
+    font-family: cursive;
+}
+button:hover{
+    background-color: rgba(128, 128, 128, 0.514);
+    box-shadow: 0 0 5px rgba(230, 230, 230, 0.705);
+}

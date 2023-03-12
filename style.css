@@ -1,0 +1,528 @@
+/* Phone  */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.img {
+    width: 300px;
+    position: relative;
+    left: 500px;
+    top: 30px;
+}
+
+input {
+    /* background-color: white; */
+    padding: 2px;
+}
+
+button {
+    /* border: 0; */
+}
+
+.layer {
+    position: absolute;
+    background-image: url(./sewwy.jpg);
+    width: 275px;
+    background-position: center;
+    height: 605px;
+    border-radius: 15px;
+    left: 510px;
+    color: white;
+    font-family: cursive;
+    top: 48.5px;
+}
+
+#time {
+    padding: 10px;
+}
+
+.shift {
+    padding: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+/* i{
+    color: white;
+} */
+.insta {
+    /* background-color: white; */
+    color: black;
+    padding: 2px;
+    height: fit-content;
+    width: fit-content;
+    text-align: center;
+    border-radius: 10px;
+    margin: 5px 5px;
+}
+
+.go {
+    border-radius: 30%;
+}
+
+.bord {
+    border-radius: 30%;
+}
+
+.insta p {
+    margin-top: -7px;
+    color: white;
+    text-shadow: 2px 2px 5px black;
+
+    /* width: 60px; */
+    word-wrap: break-word;
+    /* margin-left: 5px; */
+    font-weight: bolder;
+}
+
+.fix {
+    background-color: white;
+    color: black;
+    /* padding: 2px; */
+    height: fit-content;
+    width: fit-content;
+    border-radius: 10px;
+    margin: 0px 7px;
+}
+
+.late {
+    object-fit: contain;
+    width: 60px;
+}
+
+.cam {
+    object-fit: contain;
+    width: 100px;
+}
+
+.msg {
+    object-fit: contain;
+    width: 50px;
+}
+
+.phone {
+    object-fit: contain;
+    width: 70px;
+}
+
+.fixed {
+    display: flex;
+    position: absolute;
+    bottom: 25px;
+    left: 0px;
+}
+
+
+
+
+
+/* Camera */
+#video {
+    height: 600px;
+    width: 269px;
+}
+
+#div {
+    display: none;
+    background-color: black;
+    /* width: 100%; */
+    padding: 5px;
+    position: absolute;
+    height: 600px;
+    width: 273px;
+    /* height: 100%; */
+    overflow: auto;
+    z-index: 999;
+    transition: all 0.5s linear;
+    left: -2px;
+    border-radius: 10px;
+    top: -2px;
+}
+
+#div::-webkit-scrollbar {
+    width: 1px;
+    height: 1px;
+}
+
+#div::-webkit-scrollbar-thumb {
+    background: black;
+}
+
+#checkpix {
+    margin: 13px auto;
+    width: fit-content;
+    color: white;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#canvas {
+    border-radius: 100%;
+    width: 50px;
+    margin: 0px 60px;
+    height: 50px;
+}
+
+#dds {
+    width: 250px;
+    height: 200px;
+}
+
+span {
+    color: white;
+}
+
+#salt {
+    display: flex;
+    /* justify-content: space-between; */
+    align-items: center;
+}
+
+.abs {
+    position: fixed;
+    margin: 20px 30px;
+    bottom: 40px;
+    left: 430px;
+    z-index: 99999;
+}
+
+#btno {
+    display: none;
+    position: absolute;
+    left: 150px;
+    bottom: 30px;
+}
+
+#btm {
+    position: absolute;
+    left: 100px;
+    bottom: 30px;
+}
+
+.coco {
+    margin: 0 20px;
+}
+
+.absolute {
+    position: absolute;
+    background-image: url(animal_0031.jpg);
+    background-position: center;
+    background-size: cover;
+    left: 515px;
+    border-radius: 10px;
+    top: 50px;
+    height: 600px;
+    width: 269px;
+}
+
+
+
+
+/* Call */
+.cover {
+    background-image: url(animal_0011.jpg);
+    background-position: center;
+    background-size: cover;
+    border-radius: 10px;
+    width: 450px;
+    border: 2px solid black;
+    margin-top: -8px;
+    height: 600px;
+}
+
+.srcc {
+    width: 100px;
+    margin-left: 85px;
+}
+
+.joy {
+    margin: auto;
+    /* width: fit-content; */
+    align-items: center;
+}
+
+
+/* Message */
+.mim {
+    width: 50px;
+}
+
+.madd {
+    font-size: 30px;
+    font-family: cursive;
+    color: white;
+    margin-top: 20px;
+    margin-left: 60px;
+}
+
+.round {
+    border-radius: 50%;
+    background-color: royalblue;
+    /* padding: 8px; */
+    width: 10px;
+    height: 10px;
+}
+
+.xavi {
+    display: flex;
+    /* align-items: center; */
+    padding: 5px;
+    cursor: pointer;
+    border-radius: 5px;
+    /* justify-content: space-between; */
+}
+
+.xavi:hover {
+    background-color: rgba(255, 255, 255, 0.26);
+}
+
+.lin {
+    display: flex;
+    /* align-items:center; */
+    justify-content: space-between;
+    /* width: fit-content; */
+}
+
+.white {
+    color: white;
+    font-weight: 800;
+    font-size: 18px;
+}
+
+.plac {
+    color: white;
+    font-weight: 800;
+    font-size: 15px;
+}
+
+#dase {
+    display: none;
+    background-color: rgba(0, 0, 0, 0.61);
+    padding: 10px;
+    position: absolute;
+    top: 2px;
+    width: 250px;
+    border-radius: 10px;
+    /* overflow: auto; */
+    /* overflow-x: scroll; */
+    height: 580px;
+}
+
+#dase::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+
+}
+
+#dase::-webkit-scrollbar-thumb {
+    width: 5px;
+    height: 5px;
+}
+
+.send {
+    font-size: 30px;
+    color: white;
+    background-color: royalblue;
+    border: 0;
+    padding: 1px;
+    border-radius: 50%;
+}
+
+#result {
+    text-align: right;
+    align-items: flex-end;
+}
+
+.bub {
+    font-size: 20px;
+}
+
+
+
+.gued {
+    border-radius: 5px;
+    align-items: center;
+    padding: 8px;
+    margin-top: 10px;
+    word-wrap: break-word;
+    margin-left: 80px;
+    color: white;
+    background-color: royalblue;
+}
+
+.gid {
+    color: white;
+    font-family: cursive;
+    margin: 6px 50px;
+}
+
+.gued button {
+    font-size: 20px;
+    background: none;
+    color: crimson;
+    padding: 3px;
+
+    border-radius: 5px;
+}
+
+.juj {
+    width: 205px;
+    border-radius: 8px;
+    font-size: 21px;
+    outline: none;
+    color: royalblue;
+    border: 0;
+    padding: 1px;
+    height: 35px;
+}
+
+.gad {
+    margin-top: 10px;
+}
+button{
+    padding: 10px;
+    border-radius: 5px;
+}
+.gog{
+    background-color: rgba(0, 0, 0, 0.534);
+    border-radius: 50%;
+
+}
+
+.icofont-camera{
+    color: rgba(255, 255, 255, 0.671);
+    font-size: 50px;
+}
+#cav {
+    font-size: 30px;
+    background: none;
+    color: white;
+}
+.sec{
+    margin-left: 13px;
+}
+.SED{
+    text-align: center;
+    color: white;
+    font-size: 37px;
+    font-family: cursive;
+}
+.sef {
+    display: flex;
+    align-items: center;
+}
+
+.flex {
+    display: flex;
+    flex-wrap: wrap;
+    width: 250px;
+    margin-left: 10px;
+
+    justify-content: center;
+}
+
+.cocki {
+    outline: none;
+    width: 100%;
+    font-size: 50px;
+    border: 0;
+    text-align: center;
+    font-family: cursive;
+    margin-top: 120px;
+    height: 60px;
+    color: black;
+    background-color: rgba(0, 0, 0, 0.096);
+}
+
+.bat {
+    padding: 15px;
+    width: 77px;
+    height: 77px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.322);
+    margin: 3px;
+    border: 2px solid black;
+    color: black;
+    font-size: 45px;
+}
+
+.dd {
+    background-color: black;
+    color: white;
+    padding: 5px;
+    font-size: 15px;
+    width: 80px;
+    height: 40px;
+    border-radius: 0;
+}
+
+.bat:hover {
+    background-color: rgba(255, 255, 255, 0.473);
+}
+
+
+.fake {
+    font-size: 50px;
+    margin-top: 122px;
+    border-radius: 0;
+    
+    padding: 0;
+    width: fit-content;
+    height: fit-content;
+}
+.land{
+    display: flex;
+    align-items: center;
+}
+
+
+#result {
+    height: 480px;
+    overflow: auto;
+}
+
+.rere {
+    overflow: auto;
+    height: 540px;
+    border-radius: 0 0 10px 10px;
+}
+
+#result::-webkit-scrollbar,
+.rere::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+}
+
+#result::-webkit-scrollbar-thumb,
+.rere::-webkit-scrollbar-thumb {
+    width: 5px;
+    height: 5px;
+}
+
+
+
+
+
+
+.fifa {
+    position: absolute;
+    top: 0;
+    width: 272px;
+    background-image: url(1664519173204.jpg);
+    background-position: center;
+    left: 465px;
+    overflow: auto;
+    height: 610px;
+    border-radius: 20px;
+    padding: 20px;
+}
+
+.fifa::-webkit-scrollbar,
+.fifa::-webkit-scrollbar-thumb {
+    width: 5px;
+    height: 5px;
+}

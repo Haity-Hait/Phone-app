@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../../../bootstrap-5.2.0-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        h1, table, td, th, tr, tbody, label{
+            color: white;
+            text-shadow: 5px 5px 10px rgba(0, 0, 0, 0.801);
+            font-weight: 700;
+        }
+        
+    </style>
+</head>
+<body>
+    <img ondrag="follow()" src="vivo.png" alt="" class="img">
+    <main class="fifa m-5">
+        <h1 class="SED">TO-DO LISTS</h1>
+        <form class="">
+            <label for="">What to do :</label>
+            <input id="firstName" class='form-control w-100 mt-3' type="text">
+            <label for="">Description :</label>
+            <input id="email" class='form-control w-100 mt-3' type="text">
+            <button type="button" class="btn btn-primary m-4" onclick="sub()">Submit</button>
+        </form>
+        <table id="table" class="table w-25 col-sm">
+            <thead>
+                <th>S/N</th>
+                <th>WHAT TO DO</th>
+                <th>DESCRIPTION</th>
+                <th>PENALTY</th>
+                <th>START-DATE</th>
+                <th>END-DATE</th>
+                <th>CURRENT-TIME</th>
+                <th></th>
+            </thead>
+            <tbody id="content"></tbody>
+        </table>
+    </main>
+</body>
+<script>
+    let firstName = document.getElementById('firstName')
+    let lastName = document.getElementById('lastName')
+    let phone = document.getElementById('phone')
+    let nin = document.getElementById('nin')
+    let email = document.getElementById('email')
+    let content = document.getElementById('content')
+    let table = document.getElementById('table')
+    let arry = [
+        {what: "", das: "", des: "", start: "", end: "", time: ""}
+
+    ]
+    // function store(){
+    // }
+        
+        
+
+        
+    
+    function sub(){
+        content.innerHTML = ""
+        let date = new Date();
+        let lade = new Date();
+        let data = {
+            what: firstName.value,
+            das: email.value,
+            des:  "Must be done, else a sum of $5 would be deducted from ur account",
+            start: date.toDateString(),
+            end: "In Two days time, Same time.",
+            time: lade.toLocaleTimeString()
+        }
+        arry.push(data)
+        localStorage.setItem("Array", JSON.stringify(arry))
+        showItem()
+        
+    }
+    function showItem(){
+            let local = localStorage.getItem("Array")
+            let stringify = JSON.parse(local)
+            console.log(stringify);
+            if (stringify != null) {
+                arry = stringify
+            }
+
+        for(index=1; index < stringify.length; index++){
+            
+            let items = stringify[index]
+            content.innerHTML+=`
+            <tr>
+                <td>${index}</td>
+                <td>${items.what}</td>
+                <td>${items.das}</td>
+                <td>${items.des}</td>
+                <td>${items.start}</td>
+                <td>${items.end}</td>
+                <td>${items.time}</td>
+            </tr>
+            `
+        }
+        }
+        showItem()
+        function follow(){
+            window.location.href = "phone.html"
+        }
+</script>
+</html>

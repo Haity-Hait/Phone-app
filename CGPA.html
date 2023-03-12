@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="bootstrap-5.2.0-dist/css/bootstrap.min.css">
+    <style>
+        body, h1, table, th, td, tr, tbody, .foga{
+            color: white;
+            text-shadow: 3px 4px 8px black;
+        }
+        table {
+            border: 2px solid black;
+        }
+
+        #name_of_student {
+            margin: 10px auto;
+            width: fit-content;
+            font-size: 53px;
+        }
+
+        #shally {
+            /* position: absolute;
+            top: 30px; */
+            width: 250px;   
+            /* background-color: antiquewhite; */
+        }
+        .posgo{
+            position: absolute;
+            top: 48px;
+            padding: 15px;
+            border-radius: 15px;
+            left: 514px;
+            height: 600px;
+            overflow: auto;
+            width: 270px;
+            /* width: 750px; */
+            /* background-color: aqua; */
+            background-image: url(1664519173204.jpg);
+            background-position: center;
+        }
+        .posgo::-webkit-scrollbar{
+            width: 5px;
+            height: 5px;
+        }
+        .posgo::-webkit-scrollbar-thumb{
+            width: 5px;
+            height: 5px;
+        }
+        #shally h1{
+            text-align: center;
+        }
+        .sc{
+            width: 2px;
+        }
+        .dg{
+            margin-top: 8px;
+        }
+    </style>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body id="body" class="">
+    <img class="img" src="vivo.png" alt="">
+    <div class="posgo">
+        <div id="shally">
+            <h1 class="dg">C.G.P.A. CALCULATOR</h1>
+            <input id="names" onkeyup="namely()" placeholder="Name" class="form-control w-100" type="text">
+            <br>
+            <label for="">Course :</label>
+            <select name="" class="form-control" id="course">
+                <option value=""></option>
+                <option value="HTML">HTML</option>
+                <option value="CSS">CSS</option>
+                <option value="JAVASCRIPT">JAVASCRIPT</option>
+                <option value="NODE">NODE</option>
+                <option value="REACT">REACT</option>
+                <option value="BOOTSTRAP">BOOTSTRAP</option>
+                <option value="TAILWIND CSS">TAILWIND CSS</option>
+                <option value="JAVASCRIPT VUE">VUE</option>
+            </select>
+            <br>
+            <br>
+            <input id="ca1" onkeyup="key()" placeholder="CA_1" class="form-control w-100" type="number">
+            <br>
+            <input id="ca2" onkeyup="key()" placeholder="CA_2" class="form-control w-100" type="number">
+            <br>
+            <input id="exams" onkeyup="key()" placeholder="Exams" class="form-control w-100" type="number">
+            <br>
+            <div class="d-flex gap-5">
+                <button onclick="add()" class="btn btn-primary">ADD</button>
+                <button onclick="reset()" class="btn btn-danger">Reset</button>
+            </div>
+            <br>
+        </div>
+
+
+        <h1 id="name_of_student"></h1>
+        <table class="table  text-color-white sc col-sm">
+            <thead class="col-sm">
+                <tr>
+                    <th scope="col">S/N</th>
+                    <th scope="col">Course</th>
+                    <th scope="col">CA_1</th>
+                    <th scope="col">CA_2</th>
+                    <th scope="col">Exams</th>
+                    <th scope="col">Total</th>
+                    <th scope="col">Grade</th>
+                    <th scope="col">Credit Hours</th>
+                    <th scope="col">Grade Point</th>
+                </tr>
+            </thead>
+            <tbody id="display"></tbody>
+            <tfoot>
+                <tr>
+                    <th colspan="6" class="fs-5, fw-bold text-end">Grand Total: <span id="GT"></span> </th>
+                    <th colspan="2" class="fs-5, fw-bold text-end">Total Credit Hours: <span id="TCH"></span> </th>
+                    <th colspan="0" class="fs-5, fw-bold text-end">Total Grade Point: <span id="TGP"></span> </th>
+                </tr>
+            </tfoot>
+        </table>
+        <h1>G.P.A : <span id="gpa"></span></h1>
+        <button onclick="printIt()" class="btn btn-success">Print</button>
+
+    </div>
+</body>
+<script>
+    let course = document.getElementById('course')
+    let CA_1 = document.getElementById('ca1')
+    let CA_2 = document.getElementById('ca2')
+    let exams = document.getElementById('exams')
+    let shally = document.getElementById('shally')
+    let displayAll = document.getElementById('display')
+    let GT = document.getElementById('GT')
+    let TCH = document.getElementById('TCH')
+    let nameStdent = document.getElementById('name_of_student')
+    let nameInput = document.getElementById('names')
+    let TGP = document.getElementById('TGP')
+    let body = document.getElementById('body')
+    let GPA = document.getElementById('gpa')
+    let allArray = [
+        { course: "", ca1: "", ca2: "", exams: "", total: "", grade: "", credithour: "", gradepoint: "" }
+    ]
+
+
+    function add() {
+        displayAll.innerHTML = ""
+        let allTotal = Number(CA_1.value) + Number(CA_2.value) + Number(exams.value)
+        let ch = Math.floor(Math.random() * 5 + 1);
+
+        let data = {
+            course: course.value,
+            ca1: CA_1.value,
+            ca2: CA_2.value,
+            exams: exams.value,
+            total: allTotal,
+            credithour: ch,
+        }
+        allArray.push(data)
+        localStorage.setItem("Table", JSON.stringify(allArray))
+        set()
+    }
+
+    function set() {
+        // displayAll.innerHTML =""
+        let seti = localStorage.getItem("Table")
+        let get = JSON.parse(seti)
+        if (get != null) {
+            allArray = get
+        }
+        for (index = 1; index < get.length; index++) {
+            let element = get[index];
+            let g = ""
+            if (element.total > 140) {
+                g = "More than Required Amount"
+            } else if (element.total >= 100) {
+                g = "A"
+            } else if (element.total >= 80) {
+                g = "B"
+            } else if (element.total >= 50) {
+                g = "C"
+            } else if (element.total >= 30) {
+                g = "D"
+            } else if (element.total >= 20) {
+                g = "E"
+            } else if (element.total <= 10) {
+                g = "F"
+            }
+
+            let P;
+
+            if (g == "A") {
+                P = 5 * element.credithour
+            } else if (g == "B") {
+                P = 4 * element.credithour
+            } else if (g == "C") {
+                P = 3 * element.credithour
+            } else if (g == "D") {
+                P = 2 * element.credithour
+            } else if (g == "E") {
+                P = 1 * element.credithour
+            } else if (g == "F") {
+                P = 0 * element.credithour
+            }
+
+
+
+            displayAll.innerHTML += `
+            <tr>
+                <td class="foga">${index}</td>
+                <td class="foga">${element.course}</td>
+                <td class="foga">${element.ca1}</td>
+                <td class="foga">${element.ca2}</td>
+                <td class="foga">${element.exams}</td>
+                <td name="head">${element.total}</td>
+                <td class="foga">${g}</td>
+                <td name="credit">${element.credithour}</td>
+                <td name="grade">${P}</td>
+            </tr>
+            `
+        }
+
+
+
+        let head = document.getElementsByName('head')
+        let total = 0
+        for (let i = 0; i < head.length; i++) {
+            total += parseInt(head.item(i).innerText)
+        }
+        GT.textContent = total
+
+
+
+        let credit = document.getElementsByName('credit')
+        let totalcredit = 0
+        for (let i = 0; i < credit.length; i++) {
+            totalcredit += parseInt(credit.item(i).innerText)
+        }
+        TCH.textContent = totalcredit
+
+
+        let grade = document.getElementsByName('grade')
+        let totalgrade = 0
+        for (let i = 0; i < grade.length; i++) {
+            totalgrade += parseInt(grade.item(i).innerText)
+        }
+        TGP.textContent = totalgrade
+
+
+
+        let totalgpa = Number(0)
+        totalgpa += totalgrade / totalcredit
+        GPA.textContent = totalgpa.toFixed(2)
+    }
+    set()
+
+    function key() {
+        if (CA_1.value > 20) {
+            alert("Score Can't be more Than 20 Sir/Ma")
+        } else if (CA_2.value > 20) {
+            alert("Score Can't be more Than 20 Sir/Ma")
+        } else if (exams.value > 100) {
+            alert("Score Can't be more Than 100 Sir/Ma")
+        }
+    }
+
+
+    function namely() {
+        nameStdent.textContent = nameInput.value
+        setInterval((time) => {
+            nameInput.disabled = true
+        }, 15000);
+    }
+
+
+    function reset() {
+        localStorage.removeItem('Table')
+        nameStdent.textContent = ""
+        window.location.reload()
+    }
+
+    function printIt() {
+        shally.style.display = "none"
+        window.print()
+    }
+
+
+
+</script>
+
+</html>

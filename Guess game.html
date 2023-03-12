@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="bootstrap-5.2.0-dist/css/bootstrap.min.css">
+    <style>
+        div {
+            position: absolute;
+            top: 49px;
+            left: 513px;
+            border-radius: 20px;
+            padding: 20px;
+            height: 602px;
+            width: 272px;
+            color: white;
+            font-family: cursive;
+            background-image: url(img7.jpg);
+            background-position: center;
+        }
+        input{
+            margin-top: 30px;
+        }
+        button{
+            margin: 10px 150px;
+        }
+        h1 {
+            font-family: cursive;
+            font-size: 30px;
+            color: white;
+            margin-top: 15px;
+            text-align: center;
+        }
+        .dd{
+            margin: 30px 30px;
+        }
+    </style>
+</head>
+
+<body>
+    <img ondrag="ded()" src="vivo.png" class="img" alt="">
+    <div>
+        <h1>Take a guess from 1-5 </h1>
+        <input class="form-control" id="input" type="text">
+        <button class="btn btn-primary" onclick="guess()">Guess</button>
+        <h2 id="answer"></h2>
+    </div>
+</body>
+<script>
+    let Answer = document.getElementById('answer')
+    let screen = document.getElementById('input')
+    let original = Number(Math.random() * 5).toFixed(0)
+    console.log(original)
+    function guess() {
+        if(screen.value == ""){
+            Answer.textContent = "The Input value is empty. "
+        } else if (screen.value == original) {
+            Answer.innerHTML = `
+                You Chose  "${screen.value}".
+                <br>
+                You are correct! 🥰
+                <br>
+                <button onclick="take()" class="btn btn-info dd">Take Another Guess</button>
+            `
+        } else (
+            Answer.innerHTML = `
+                You Chose  "${screen.value}".
+                <br>
+                You are not correct! 🥴
+                <br>
+                <button onclick="take()" class="btn btn-info dd">Take Another Guess</button>
+            `
+        )
+        screen.value = ""
+    }
+    function take(){
+        window.location.reload()
+    }
+    function ded(){
+        window.location.href = "phone.html"
+    }
+</script>
+
+</html>

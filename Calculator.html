@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="icofont/icofont.min.css">
+    <link rel="stylesheet" href="calculator.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .psd{
+            position: absolute;
+            top: 50px;
+            left: 515px;
+            background-image: url(1664519173204.jpg);
+            background-position: center;
+        }
+        
+    </style>
+</head>
+<body>
+    <img class="img" src="vivo.png" alt="">
+    <main class="psd">
+        <div class="dd">
+            <input  type="text" id="screen">
+            <div id="bub" class="bub">
+                <div class="flex">
+                    <button class="hey" onclick="CE('ce')">CE</button>
+                    <button class="hey" onclick="clr('c')"><i class="icofont-delete"></i></button>
+                </div>
+                <div class="flex">
+                    <button class="big" onclick="per('%')">%</button>
+                    <button class="big" onclick="signs('(')">(</button>
+                    <button class="big" onclick="signs(')')">)</button>
+                    <button class="big" onclick="signs('/')">/</button>
+    
+                </div>
+                <div class="flex2">
+                    <div class="flex">
+                        <button class="small" onclick="press(7)">7</button>
+                        <button class="small" onclick="press(8)">8</button>
+                        <button class="small" onclick="press(9)">9</button>
+                        <button class="small" class="plus" onclick="signs('+')">+</button>
+                    </div>
+                    <div class="flex">
+                        <button class="small" onclick="press(4)">4</button>
+                        <button class="small" onclick="press(5)">5</button>
+                        <button class="small" onclick="press(6)">6</button>
+                        <button class="small" class="plus" onclick="signs('-')">-</button>
+                    </div>
+                    <div class="flex">
+                        <button class="small" onclick="press(1)">1</button>
+                        <button class="small" onclick="press(2)">2</button>
+                        <button class="small" onclick="press(3)">3</button>
+                        <button class="small" class="plus" onclick="signs('*')">*</button>
+                    </div>
+                    <div class="flex">
+                        <button class="plus" onclick="press('.')">.</button>
+                        <button class="plus" onclick="press(0)">0</button>
+                        <button class="equali" onclick="equal('=')">=</button>
+                    </div>
+            </div>
+                </div>
+            </div>
+    </main>
+</body>
+<script>
+    function clr(){
+        var output = document.getElementById('screen').value
+            document.getElementById('screen').value= output.substr(0, (output.length -1))
+    }
+    function CE(){
+        document.getElementById('screen').value=""
+    }
+    function per(){
+        document.getElementById('screen').value+="/100"
+    }
+    function signs(lok){
+        document.getElementById('screen').value=document.getElementById('screen').value+lok
+    }
+    function press(press){
+        document.getElementById('screen').value=document.getElementById('screen').value+press
+    }
+    function press(press){
+        document.getElementById('screen').value=document.getElementById('screen').value+press
+    }
+    function equal(){
+        let answer = document.getElementById('screen').value;
+        let result = eval(answer);
+        document.getElementById('screen').value=result
+    }
+</script>
+</html>

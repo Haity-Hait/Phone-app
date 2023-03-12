@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="icofont/icofont.min.css">
+    <style>
+        .back {
+            position: absolute;
+            width: 100%;
+            bottom: -8px;
+            text-align: center;
+        }
+        #ver{
+            background-image: url(img7.jpg);
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        .back button {
+            width: fit-content;
+            height: fit-content;
+            padding: 0;
+            border: 0;
+            background: none;
+            font-weight: bolder;
+            font-size: 30px;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <img class="img" src="vivo.png" alt="">
+        <div class="layer">
+
+            <div id="all" class="shift">
+                <div>
+                    <p id="time"></p>
+                </div>
+
+                <div onclick="calculator()" class="insta">
+                    <img class="late go" src="calculator.jpeg" alt="">
+                    <p>Calculator</p>
+                </div>
+                <div onclick="todo()" class="insta">
+                    <img class="late" src="todo2.png" alt="">
+                    <p>To-Do</p>
+                </div>
+                <div onclick="cgpa()" class="insta">
+                    <img class="late" src="cgpa-removebg-preview.png" alt="">
+                    <p>C.G.P.A.</p>
+                </div>
+                <div onclick="guess()" class="insta">
+                    <img class="late" src="gur-removebg-preview.png" alt="">
+                    <p>Guess</p>
+                </div>
+                <div onclick="twit()" class="insta">
+                    <img class="late bord" src="124021.png" alt="">
+                    <p>Twitter</p>
+                </div>
+                <div onclick="inta()" class="insta">
+                    <img class="late" src="Instagram_icon.png.webp" alt="">
+                    <p>Instagram</p>
+                </div>
+                <div onclick="face()" class="insta">
+                    <img class="late" src="facebook.png" alt="">
+                    <p>Facebook</p>
+                </div>
+                <div class="insta">
+                    <img class="late" src="Instagram_icon.png.webp" alt="">
+                    <p>Lorem.</p>
+                </div>
+                <div class="insta">
+                    <img class="late" src="whatsapp-removebg-preview.png" alt="">
+                    <p>Whatsapp</p>
+                </div>
+                <div onclick="chrome()" class="insta">
+                    <img class="late" src="chrome.png" alt="">
+                    <p>Chrome</p>
+                </div>
+                <div onclick="gmail()" class="insta">
+                    <img class="late" src="Gmail.max-1100x1100.png" alt="">
+                    <p>Gmail</p>
+                </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                <div class="fixed">
+                    <img class="phone" id="phone" src="call-removebg-preview.png" alt="">
+                    <img id="message" class="msg" src="message-removebg-preview.png" alt="">
+                    <img onclick="chrome()" class="late sec" src="chrome.png" alt="">
+                    <img class="cam" id="camera" src="images-removebg-preview.png" alt="">
+                </div>
+
+            </div>
+            <div class="back">
+                <button onclick="home()">________</button>
+            </div>
+        </div>
+
+    </main>
+</body>
+<script src="call.js"></script>
+<script>
+    
+
+
+    let camera = document.getElementById('camera')
+    let phone = document.getElementById('phone')
+    let message = document.getElementById('message')
+    let all = document.getElementById('all')
+     
+    function home(){
+        window.location.reload()
+    }
+
+
+    camera.addEventListener('click', function () {
+        window.location.href = "./camera.html"
+    })
+    phone.addEventListener('click', function () {
+        all.innerHTML = " "
+        all.innerHTML = `
+            <div class="cover">
+                <div class="sy">
+                    <div class="land">
+                        <input class="cocki" id="input1" type="text">
+                        <button class="fake" onclick="clr('c')"><i class="icofont-delete"></i></button>
+                    </div>
+                    <div class="flex">
+                        <button class="bat" onclick="numbers(1)">1</button>
+                        <button class="bat" onclick="numbers(2)">2</button>
+                        <button class="bat" onclick="numbers(3)">3</button>
+                        <button class="bat" onclick="numbers(4)">4</button>
+                        <button class="bat" onclick="numbers(5)">5</button>
+                        <button class="bat" onclick="numbers(6)">6</button>
+                        <button class="bat" onclick="numbers(7)">7</button>
+                        <button class="bat" onclick="numbers(8)">8</button>
+                        <button class="bat" onclick="numbers(9)">9</button>
+                        <button class="bat" onclick="numbers('#')">#</button>
+                        <button class="bat" onclick="numbers(0)">0</button>
+                        <button class="bat" onclick="numbers('*')">*</button>
+                    </div>
+                    <img id="dial" onclick="diall()" class="srcc" src="dial-removebg-preview.png" alt="">
+                    <audio id="audi" src=""></audio>
+                </div>
+            </div>
+        `
+    })
+    message.addEventListener('click', function () {
+        window.location.href = "./messages.html"
+    })
+    let timeo = null
+    function fil() {
+        let date = new Date()
+        document.getElementById('time').innerText = date.toLocaleTimeString()
+    }
+    timeo = setInterval(fil, 0);
+    function cgpa() {
+
+    }
+    function calculator() {
+
+    }
+    function todo() {
+
+    }
+    function chrome() {
+
+    }
+    function guess() {
+
+    }
+    function face() {
+
+    }
+    function twit() {
+
+    }
+    function inta() {
+
+    }
+    function gmail() {
+
+    }
+    
+</script>
+
+<script>
+    
+    function cav(){
+        document.getElementById('dase').style.display="none"
+    }
+    function sac(){
+        document.getElementById('dase').style.display="block"
+    }
+
+
+
+
+    
+</script>
+<script>
+    
+</script>
+</html>
